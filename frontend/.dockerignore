@@ -1,0 +1,6 @@
+node_moules
+Dockerfile
+.git
+.gitignore
+.dockerignore
+.env
