@@ -1,5 +1,5 @@
 .header{
-    position: sticky;
+    position: fixed;
     top: 0;
     min-height: 80px;
     width: 100%;
@@ -9,18 +9,39 @@
     align-items: center;
     overflow: hidden;
     background-color: black;
+    z-index: 2;
 }
 
 .logo{
+    width: 50px;
+    padding: 2px;
+    border-radius: 50%;
+}
+
+.logo-title{
+    display: flex;
+}
+.logo-title h1{
+    font-family: 'Bruno Ace', cursive;
+}
+
+.title{
     text-decoration: none;
     text-transform: uppercase;
+    align-items: center;
     color: white;
     padding-left: 40px;
+    display: flex;
 }
 .header-links{
     display: flex;
 
 }
+.header-links h3{
+    font-family: 'Bruno Ace', cursive;
+    padding-right: 30px;
+}
+
 .header-links ul li{
     list-style: none;
     display: inline-block;

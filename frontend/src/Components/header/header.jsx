@@ -1,37 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
+import logo from "../../multimedia/logo.png"
 
 const Header = () => {
     return (
         <header className="header">
       
-            <div>
-                <h1>
-                    <Link to="/" className="logo">
-                        Fottik
-                    </Link>
-                </h1>
+            <div className="logo-title">
+                
+                <Link to="/" className="title">
+                    <img className="logo" src={logo}  alt="logo-ecommerce" />
+                    <h1>Fottik</h1>
+
+                </Link>
+                
                 
             </div>
 
             <div className="header-links">
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/">
+                            <h3>HOME</h3>
+                        </Link>
                     </li>
                 </ul>
                 <ul>
                     <li>
                         <Link to="/login">
-                            Login
+                            <h3>Login</h3>
                         </Link>
                     </li>
                 </ul>
                 <ul>
                     <li>
                         <Link to="/cart" className="cart">
-                            <i class= "fas fa-shopping-cart"/>
+                            <h3>
+                                <i class= "fas fa-shopping-cart"/>
+                            </h3>
+                            
                         </Link>
                     </li>
                 </ul>
