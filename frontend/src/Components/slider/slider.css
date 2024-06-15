@@ -8,12 +8,12 @@
 }
 .page-title{
     margin-top: 20vh;
-    margin-left: 40%;
+    margin-left: 38vw;
     
 }
 .page-title h1{
     font-family: 'Bruno Ace', cursive;
-    padding-left: 25px;
+    padding-left: 50px;
 }
 
 .slider{
@@ -122,6 +122,9 @@
 }
 .cuadro h2{
     justify-content: center;
+}
+.cuadro .masComprados{
+    padding-bottom: 5%;
 }
 
 .masComprados h2 {
