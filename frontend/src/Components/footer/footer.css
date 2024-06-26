@@ -1,0 +1,71 @@
+/* FOOTER */
+#Footer{
+    background-color: #FFF1DC;
+    margin: 0 auto;
+    font-family: 'Bruno Ace', cursive;
+    color: #ffffff;
+    justify-content: center;
+    
+}
+footer{
+    background-color: #000000;
+    position: static;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding-bottom: 5px;
+    
+    
+}
+footer ul{
+    list-style-type: none;
+}
+.footer-left h1{
+    font-family: 'Bruno Ace', cursive;
+    padding: 10%;
+}
+.footer-left{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.footer-center{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.footer-center ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.footer-center ul{
+    align-items: center;
+}
+.footer-center h2{
+    font-family: 'Bruno Ace', cursive;
+    justify-content: center;
+    align-items: center;
+
+}
+.footer-right{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.footer-right ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.footer-right h2{
+    font-family: 'Bruno Ace', cursive;
+}
+
+.derechos_reser{
+    background-color: #000000;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.derechos_reser h4{
+    font-family: 'Bruno Ace', cursive;
+    color: #ffffff;
+    
+}
