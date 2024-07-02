@@ -13,7 +13,7 @@ En la consola de tu IDE coloca los siguientes pasos, para poder levantar el proy
     ```
 3. **Levanta el contenedor de docker del proyecto:**
     ```
-    docker-compose -d --build
+    docker-compose up -d --build
     ```
 4. **Coloca lo siguiente en tu navegador para poder ver la pag web del FrontEnd:**
     ```
