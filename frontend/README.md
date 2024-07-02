@@ -17,7 +17,7 @@ En la consola de tu IDE coloca los siguientes pasos, para poder levantar el proy
     ```
 4. **Coloca lo siguiente en tu navegador para poder ver la pag web del FrontEnd:**
     ```
-    http://localhost:3000/
+    http://localhost:3001/
     ```
 ## **Parar el proyecto y los contenedores de Docker**
 
