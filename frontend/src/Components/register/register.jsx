@@ -8,7 +8,7 @@ export default function Register() {
         <section>
             <div class="form-box">
                 <div class="form-value">
-                    <form action="http://localhost:3000/" method=''>
+                    <form action="http://localhost:3000/" method='post'>
                         <h2 class="login-title">Sign Up</h2>
                         <div class="inputbox">
                             <input type="name" id="nombre" name="usuario"  required/>

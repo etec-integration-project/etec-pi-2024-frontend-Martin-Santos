@@ -15,7 +15,7 @@ function App() {
 
   return(
     <div>
-      <DataProvider>
+      {/* <DataProvider> */}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<>
@@ -44,9 +44,9 @@ function App() {
               <ProductList/>
               <Footer/>
             </>} />
-            <Route path="/cart" element={<>
+            {/* <Route path="/cart" element={<>
               <CartContent/>
-            </>} />
+            </>} /> */}
 
 
             {/* <Route path="/productos" element={<>
@@ -62,7 +62,7 @@ function App() {
 
           </Routes>
         </BrowserRouter>
-      </DataProvider>
+      {/* </DataProvider> */}
       
     </div>
   );
