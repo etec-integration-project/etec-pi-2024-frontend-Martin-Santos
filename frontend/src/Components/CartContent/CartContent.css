@@ -1,0 +1,88 @@
+.cartContent {
+    font-family: 'Bruno Ace', cursive;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px;
+    padding-top: 1vh;
+}
+.cartContent .name{
+    padding-top: 50px;
+}
+.cartContent .price{
+    padding-top: 50px;
+}
+.cartContent .cart-delete-button{
+    padding-top: 50px;
+}
+.cartContent .cantidad{
+    padding-top: 30px;
+}
+
+.cartContent > img {
+    height: 120px;
+    width: 120px;
+}
+.cartTotal {
+    text-align: center;
+    font-family: 'Bruno Ace', cursive;
+}
+
+.cart-empty-message{
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* counter-button */
+.counter-button{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* delete-button */
+.cart-delete-button{
+    cursor: pointer;
+}
+
+/* Titulo */
+
+.title-cart{
+    margin-top: 24vh;
+    font-family: 'Bruno Ace', cursive;
+    padding: 20px;
+    font-size: 15px;
+    border: none;
+    position: relative;
+    left: 0%;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #0074c7;
+    background-color: #4a91c4;
+}
+
+/* Empty Cart */
+.empty-cart-page{
+    margin-bottom: 20vh;
+}
+.empty-cart img{
+    height: 200px;
+    width: 200px;
+}
+.empty-message h4{
+    color: grey;
+}
+
+/* Total */
+.cartTotal{
+    margin-bottom: 20vh;
+}
+.cartTotal h3{
+    padding-bottom: 20px;
+}
+.cartTotal button{
+    font-family: 'Bruno Ace', cursive;
+    border-radius: 8px;
+    background-color: #18479c;
+    color: #fff;
+    padding: 15px 200px;
+    cursor: pointer;
+}
