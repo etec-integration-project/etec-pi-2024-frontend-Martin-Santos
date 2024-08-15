@@ -12,3 +12,9 @@ services:
       - REACT_APP_NAME=martin
       - CHOKIDAR_USEPOLLING=true
       - PUBLIC_URL=http://localhost:3001
+    networks:
+      - santos-app-network
+      
+networks:
+  santos-app-network:
+    external: true
