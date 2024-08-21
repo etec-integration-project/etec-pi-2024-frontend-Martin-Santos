@@ -36,14 +36,16 @@ export default function Register() {
           alert("Las contraseñas tienen que coincidir");
         } else {
           try {
-            await axios.post('http://localhost:3000/registrar', {
-              formData
+            await axios.post('http://localhost:3000/autenticacion/registrar', {
+                usuario: formData.usuario,
+                email: formData.email,
+                password: formData.password
             });
       
             alert("Usuario registrado con éxito");
           } catch (error) {
-            alert("Error el usuario ya existe");
-            console.log("Error al registrar el usuario: ", error);
+              alert("Error al registrar el usuario");
+              console.log("Error al registrar el usuario: ", error);
           }  
         }
       };
@@ -60,7 +62,7 @@ export default function Register() {
         <section>
             <div class="form-box">
                 <div class="form-value">
-                    <form action="http://localhost:3001/register" method=''>
+                    <form action="" method='' onSubmit={handleRegister}>
                         <h2 class="login-title">Sign Up</h2>
                         <div class="inputbox">
                             <input type="name" id="nombre" name="usuario" onChange={handleChange} required/>
