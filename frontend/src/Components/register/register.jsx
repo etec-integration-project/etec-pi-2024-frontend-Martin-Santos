@@ -2,6 +2,8 @@ import './register.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import dotenv from "dotenv"
+dotenv.config()
 
 export default function Register() {
     const [ showPassword, setShowPassword ] = useState(false);
