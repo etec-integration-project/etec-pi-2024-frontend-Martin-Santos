@@ -2,7 +2,7 @@ import './register.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import "dotenv/config";
+
 
 
 export default function Register() {
@@ -38,7 +38,7 @@ export default function Register() {
           alert("Las contraseñas tienen que coincidir");
         } else {
           try {
-            await axios.post(`${process.env.BACKEND_URL}/autenticacion/registrar`, {
+            await axios.post('http://localhost:3000/autenticacion/registrar', {
                 usuario: formData.usuario,
                 email: formData.email,
                 password: formData.password

@@ -2,7 +2,7 @@ import "./login.css";
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import "dotenv/config";
+
 
 
 export default function Login() {
@@ -22,7 +22,7 @@ export default function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${process.env.BACKEND_URL}/autenticacion/iniciar-sesion`, {
+            const response = await axios.post('http://localhost:3000/autenticacion/iniciar-sesion', {
                 email: formData.email,
                 password: formData.password
             });
