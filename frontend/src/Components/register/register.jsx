@@ -38,7 +38,7 @@ export default function Register() {
           alert("Las contraseñas tienen que coincidir");
         } else {
           try {
-            await axios.post('http://localhost:3000/autenticacion/registrar', {
+            await axios.post('/api/autenticacion/registrar', {
                 usuario: formData.usuario,
                 email: formData.email,
                 password: formData.password

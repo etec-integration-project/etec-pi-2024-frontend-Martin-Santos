@@ -1,20 +1,65 @@
-version: '3'
+version: "3"
 services:
   react-app:
     stdin_open: true
     tty: true
     build: .
     ports:
-      - "3001:3000"
+      - "3000:3000"
     volumes:
       - ./src:/app/src
     environment:
       - REACT_APP_NAME=martin
       - CHOKIDAR_USEPOLLING=true
       - PUBLIC_URL=http://localhost:3001
+    depends_on:
+      - app
     networks:
       - santos-app-network
+
+  db:
+    image: mysql:8.0
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+
+      - MYSQL_DATABASE=DB
+
+    ports:
+      - "3307:3306" # Puerto expuesto en tu máquina
+
+    restart: always # Asegura que el contenedor se reinicie si falla
+
+  app:
+    build: https://github.com/etec-integration-project/etec-pi-2024-backend-Martin-Santos.git
+
+    depends_on:
+      - db
+
+    ports:
+      - "5000:5000"
+
+    environment:
+      - MYSQLDB_HOST=db
+      - MYSQLDB_USER=root
+      - MYSQLDB_ROOT_PASSWORD=123456
+      - MYSQLDB_DATABASE=DB
+      - MYSQLDB_DOCKER_PORT=3306
+      - JWT_SECRET=mysecretkey
       
+    restart: always # Asegura que el contenedor se reinicie si falla
+
+  proxy:
+    image: nginx:1.27.1
+    ports:
+      - 9090:80
+    depends_on:
+      - react-app 
+    networks:
+      - santos-app-network
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
 networks:
   santos-app-network:
     external: true
