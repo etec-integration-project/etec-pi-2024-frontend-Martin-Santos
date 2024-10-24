@@ -13,7 +13,7 @@ export const ProductList = ({ allProducts, setAllProducts }) => {
 
         const fetchdata = async () => {
             try {
-                const respuesta = await axios.get("http://localhost:3000/autenticacion/productos");
+                const respuesta = await axios.get("/app/autenticacion/productos");
                 setData(respuesta.data)
                 
             } catch (error) {
