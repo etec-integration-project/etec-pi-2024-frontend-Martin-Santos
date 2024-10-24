@@ -22,7 +22,7 @@ export default function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/autenticacion/iniciar-sesion', {
+            const response = await axios.post('/app/autenticacion/iniciar-sesion', {
                 email: formData.email,
                 password: formData.password
             });
