@@ -52,13 +52,13 @@ export default function Register() {
         }
       };
     
-      const formStyle = {
-        height: '85%',
-      };
+      //const formStyle = {
+      //  height: '85%',
+      //};
     
-      const imageStyle = {
-        height: '70%',
-      };
+      //const imageStyle = {
+      //  height: '70%',
+      //};
 
     return (
         <section>
