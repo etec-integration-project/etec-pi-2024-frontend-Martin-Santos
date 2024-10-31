@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
+import { useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import axios from "axios";
 import "./productos.css"
 
@@ -39,8 +40,13 @@ export const ProductList = ({ allProducts, setAllProducts }) => {
         console.log('Add');
     };
 
+    // useEffect(getProducts, [])
+
+
     return (
         <div className='container-items'>
+            {/* <button type='button' onClick={useEffect}>Refresh</button> */}
+            <Link to="/createProduct">Create Product</Link>
             {data.map(product => (
                 <div className='item' key={product.id}>
                     <figure>

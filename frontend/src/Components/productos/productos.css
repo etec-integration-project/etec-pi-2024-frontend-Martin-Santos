@@ -1,4 +1,23 @@
 /* Main */
+.button-refresh{
+    font-family: 'Bruno Ace', cursive;
+}
+.button-refresh button{
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 0%;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c7bd00;
+}
+a {
+    text-decoration: none;
+    font-family: 'Bruno Ace', cursive;
+
+}
 .container-items {
     margin-top: 15vh;
     display: grid;
@@ -43,6 +62,10 @@ button {
 .btn-info:hover,
 button:hover {
     background-color: #555;
+}
+
+.createProductForm{
+    margin-top: 20vh;
 }
 
 /* Estilos para el modal */

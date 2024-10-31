@@ -8,6 +8,7 @@ import Footer from "./Components/footer/footer";
 import { ProductList } from "./Components/productos/productos";
 import CartContent from "./Components/CartContent/CartContent";
 import DataProvider from "./Components/Context/DataContext";
+import CreateProduct from "./Components/productos/createProduct";
 
 
 
@@ -44,6 +45,13 @@ function App() {
               <ProductList/>
               <Footer/>
             </>} />
+
+            <Route path="/createProduct" element={<>
+              <Header/>
+              <CreateProduct/>
+              <Footer/>
+            </>} />
+
             {/* <Route path="/cart" element={<>
               <CartContent/>
             </>} /> */}
