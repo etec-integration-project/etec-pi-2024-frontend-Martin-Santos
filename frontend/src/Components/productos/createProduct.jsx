@@ -60,44 +60,46 @@ export default function CreateProduct() {
     }
         
     return (
-        <div className="createProductForm">
-            <div className="">
-                <h2>Create Product</h2>
+        <section>
+            <div className="createProductForm">
+                <div className="form-create-product">
+                    <h2 className="title-create">Create Product</h2>
 
-                <form onSubmit={handleSubmit} method="post">
-                    <div>
-                        <label htmlFor="">Name</label>
-                        <div>
-                            <input type="text" name="name" onChange={handleChange}/>
+                    <form onSubmit={handleSubmit} method="post">
+                        <div className="inputbox">
+                            <label htmlFor="">Name</label>
+                            <div>
+                                <input type="text" name="name" onChange={handleChange}/>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div>
-                        <label htmlFor="">Price</label>
-                        <div>
-                            <input type="number" name="price" onChange={handleChange} />
-                        </div>
-                    </div>
-
-                    <div>
-                        <label htmlFor="">Image</label>
-                        <div>
-                            <input type="text" name="urlImage" onChange={handleChange}/>
-                        </div>
-                    </div>
-
-                    <div>
                         
-                        <div>
-                            <button type="submit">Button</button>
+                        <div className="inputbox">
+                            <label htmlFor="">Price</label>
+                            <div>
+                                <input type="number" name="price" onChange={handleChange} />
+                            </div>
                         </div>
-                    </div>
 
-                    
-                </form>
+                        <div className="inputbox">
+                            <label htmlFor="">Image</label>
+                            <div>
+                                <input type="text" name="urlImage" onChange={handleChange}/>
+                            </div>
+                        </div>
+
+                        <div>
+                            
+                            <div>
+                                <button type="submit">Button</button>
+                            </div>
+                        </div>
+
+                        
+                    </form>
+                </div>
+
             </div>
-
-        </div>
+        </section>
         
     );
 };
