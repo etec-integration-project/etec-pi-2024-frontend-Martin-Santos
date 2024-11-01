@@ -9,6 +9,7 @@ import { ProductList } from "./Components/productos/productos";
 import CartContent from "./Components/CartContent/CartContent";
 import DataProvider from "./Components/Context/DataContext";
 import CreateProduct from "./Components/productos/createProduct";
+import EditProduct from "./Components/productos/editProduct";
 
 
 
@@ -51,6 +52,13 @@ function App() {
               <CreateProduct/>
               <Footer/>
             </>} />
+
+            <Route path="/editProduct/:id" element={<>
+              <Header/>
+              <EditProduct/>
+              <Footer/>
+            </>} />
+
 
             {/* <Route path="/cart" element={<>
               <CartContent/>

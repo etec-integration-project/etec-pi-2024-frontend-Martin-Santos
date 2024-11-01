@@ -49,6 +49,7 @@ a {
     color: #fff;
     text-align: center;
     font-family: 'Bruno Ace', cursive;
+    padding-bottom: 5vh;
 }
 .inputbox{
     position: relative;
@@ -87,6 +88,16 @@ input:valid ~ label{
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
+}
+.container-items a{
+    justify-content: space-between;
+    width: calc(100% - 20px); /* Reducir el ancho en 20px para ajuste */
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 35px; /* Aumentar el padding para hacer los botones un poco más grandes */
+    margin-bottom: 8px; 
 }
 
 .item {

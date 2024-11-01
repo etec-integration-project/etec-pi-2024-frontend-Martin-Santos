@@ -46,7 +46,6 @@ export const ProductList = ({ allProducts, setAllProducts }) => {
     return (
         <div className='container-items'>
             {/* <button type='button' onClick={useEffect}>Refresh</button> */}
-            <Link to="/createProduct">Create Product</Link>
             {data.map(product => (
                 <div className='item' key={product.id}>
                     <figure>
@@ -57,9 +56,12 @@ export const ProductList = ({ allProducts, setAllProducts }) => {
                         <button className='btn-info' onClick={() => openModal(product)}>
                             Info
                         </button>
-                        <button onClick={() => onAddProducts()}>
+                        {/* <button onClick={() => onAddProducts()}>
                             Añadir a favoritos
-                        </button>
+                        </button> */}
+                        <Link to= {`/editProduct/${product.id}`}>Edit</Link>
+                        <Link to="/createProduct">Create Product</Link> 
+
                     </div>
                 </div>
             ))}
