@@ -36,8 +36,8 @@ export default function EditProduct() {
         }
 
         try {
-            const response = await axios.patch("/app/autenticacion/editProduct", {
-                id: formData.id,
+            const response = await axios.patch("/app/autenticacion/editProduct/"+id, {
+                // id: formData.id,
                 name: formData.name,
                 price: formData.price,
                 urlImage: formData.urlImage
