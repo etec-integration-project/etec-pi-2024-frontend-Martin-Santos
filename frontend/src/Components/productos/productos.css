@@ -57,6 +57,9 @@ a {
     width: 310px;
     border-bottom: 2px solid #fff;
 }
+label{
+    padding-bottom: 8px;   
+}
 .inputbox label{
     position: absolute;
     top: 50%;
