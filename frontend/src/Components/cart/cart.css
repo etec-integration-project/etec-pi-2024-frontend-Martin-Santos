@@ -5,3 +5,15 @@
 .cartContent{
     flex-direction: column;
 }
+.title-cart{
+    margin-top: 24vh;
+    font-family: 'Bruno Ace', cursive;
+    padding: 20px;
+    font-size: 15px;
+    border: none;
+    position: relative;
+    left: 0%;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #0074c7;
+    background-color: #4a91c4;
+}

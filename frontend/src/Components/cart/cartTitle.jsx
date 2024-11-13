@@ -1,4 +1,5 @@
-import "../CartContent/CartContent.css";
+// import "../CartContent/CartContent.css";
+import "./cart.css";
 
 
 export default function cartTitle() {
