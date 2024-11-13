@@ -103,12 +103,13 @@ export const ProductList = ({ allProducts, setAllProducts }) => {
                         <button className='btn-info' onClick={() => openModal(product)}>
                             Info
                         </button>
+                        <button onClick={() => addToCart (product)}>Add to Cart</button>
                         {/* <button onClick={() => onAddProducts()}>
                             Añadir a favoritos
                         </button> */}
                         <Link to= {`/editProduct/${product.id}`}>Edit</Link>
                         <Link to="/createProduct">Create Product</Link> 
-                        <button onClick={() => addToCart (product)}>Add to Cart</button>
+                        
 
                     </div>
                 </div>
