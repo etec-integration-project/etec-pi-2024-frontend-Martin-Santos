@@ -42,6 +42,53 @@ export const ProductList = ({ allProducts, setAllProducts }) => {
 
     // useEffect(getProducts, [])
 
+    function addToCart (product){
+
+        /*
+        Eliminar un producto del carrito por completo
+
+        function eliminarProducto(id) {
+            let products = JSON.parse(localStorage.getItem('products'))
+            product.filter(product => product.id !== id)
+            localStorage.setItem('products', JSON.stringify(products))
+        }
+
+        function RestarUnaUnidad(id) {
+            let products = JSON.parse(localStorage.getItem('products'))
+            products.forEach(p => {
+                if (p.id === product.id) {
+                    p.quantity--;
+                }
+
+                if (p.quantity <= 0) {
+                   eliminarProducto(id) 
+                }
+            });
+            localStorage.setItem('products', JSON.stringify(products))
+        }
+
+        */
+
+        const products = JSON.parse(localStorage.getItem('products'))
+        const isInProducts = products.some(p => p.id === product.id);
+
+        if (isInProducts) {
+            products.forEach(p => {
+                if (p.id === product.id) {
+                    p.quantity++;
+                }
+            });
+        } else {
+            products.push({
+                id: product.id,
+                name: product.nameProduct,
+                price: product.price,
+                quentity: 1
+            })
+        }
+
+        localStorage.setItem('products', JSON.stringify(products))
+    }
 
     return (
         <div className='container-items'>
@@ -61,6 +108,7 @@ export const ProductList = ({ allProducts, setAllProducts }) => {
                         </button> */}
                         <Link to= {`/editProduct/${product.id}`}>Edit</Link>
                         <Link to="/createProduct">Create Product</Link> 
+                        <button onClick={() => addToCart (product)}>Add to Cart</button>
 
                     </div>
                 </div>

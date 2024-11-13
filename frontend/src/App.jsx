@@ -10,10 +10,13 @@ import CartContent from "./Components/CartContent/CartContent";
 import DataProvider from "./Components/Context/DataContext";
 import CreateProduct from "./Components/productos/createProduct";
 import EditProduct from "./Components/productos/editProduct";
+import Cart from "./Components/cart/cart";
 
 
 
 function App() {
+
+  localStorage.setItem('products', JSON.stringify([]))
 
   return(
     <div>
@@ -38,6 +41,7 @@ function App() {
 
             <Route path="/cart" element={<>
               <Header/>
+              <Cart/>
               <Footer/>
             </>} />
 

@@ -56,7 +56,7 @@ export default function EditProduct() {
                 alert("Unable to create product!")
             }
         } catch (error) {
-            alert("Product Created")
+            alert("Product Edited")
             // alert("Unable to connect to the server!")
         }
     }
