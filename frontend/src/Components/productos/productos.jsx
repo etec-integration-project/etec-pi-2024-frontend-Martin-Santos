@@ -83,7 +83,7 @@ export const ProductList = ({ allProducts, setAllProducts }) => {
                 id: product.id,
                 name: product.nameProduct,
                 price: product.price,
-                quentity: 1
+                quantity: 1
             })
         }
 
