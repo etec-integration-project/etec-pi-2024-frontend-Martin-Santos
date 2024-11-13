@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import "../CartContent/CartContent.css";
+import "./cart.css";
 // import {} from 'react-router-dom'
 // import { dataContext } from "../Context/DataContext";
 

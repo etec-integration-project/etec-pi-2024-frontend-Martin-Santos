@@ -1,0 +1,7 @@
+.item-properties{
+    flex-wrap: wrap;
+}
+
+.cartContent{
+    flex-direction: column;
+}
