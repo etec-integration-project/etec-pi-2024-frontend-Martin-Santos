@@ -17,7 +17,7 @@ const Cart = () =>{
     function RestarUnaUnidad(id) {
         let products = JSON.parse(localStorage.getItem('products'))
         products = products.forEach(p => {
-            if (p.id === product.id) {
+            if (p.id === id) {
                 p.quantity--;
             }
 
@@ -35,7 +35,7 @@ const Cart = () =>{
                 <div className="cartContent" key={product.id}>
                     <img src={product.img} alt="product-card" />
                     <h3 className="name">{product.name}</h3>
-                    <div className="cantidad"><CartItemCounter product={product} /></div>
+                    {/* <div className="cantidad"><CartItemCounter product={product} /></div> */}
                     <h4 className="price">{product.price * product.quantity}$</h4>
                     {/* <h3 className="cart-delete-button" onClick={() => eliminarProducto(product.id)}>❌</h3> */}
                     <button onClick={() => EliminarProducto(product.id)}>Eliminar</button>
