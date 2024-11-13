@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import "../CartContent/CartContent.css";
+// import {} from 'react-router-dom'
 // import { dataContext } from "../Context/DataContext";
 
 // import CartItemCounter from "./CartItemCounter";
@@ -10,22 +11,30 @@ const Cart = () =>{
 
     function EliminarProducto(id) {
         let products = JSON.parse(localStorage.getItem('products'))
-        products = products.filter(product => product.id !== id)
-        localStorage.setItem('products', JSON.stringify(products))
+
+        if (products.some(p => p.id === id)) {   
+            products = products.filter(product => product.id !== id)
+            localStorage.setItem('products', JSON.stringify(products))
+            window.location.reload()
+        }
     }
 
     function RestarUnaUnidad(id) {
         let products = JSON.parse(localStorage.getItem('products'))
-        products = products.forEach(p => {
-            if (p.id === id) {
-                p.quantity--;
-            }
 
-            if (p.quantity <= 0) {
-               EliminarProducto(id) 
-            }
-        });
-        localStorage.setItem('products', JSON.stringify(products))
+        if (products.some(p => p.id === id)) {
+            products = products.forEach(p => {
+                if (p.id === id) {
+                    p.quantity--;
+                }
+                
+                if (p.quantity <= 0) {
+                    EliminarProducto(id) 
+                }
+            });
+            localStorage.setItem('products', JSON.stringify(products))
+            window.location.reload()
+        }
     }
 
 
