@@ -1,59 +1,53 @@
-import { useContext } from "react";
+import { useState, useEffect } from "react";
 import "../CartContent/CartContent.css";
 import "./cart.css";
-// import {} from 'react-router-dom'
-// import { dataContext } from "../Context/DataContext";
 
-// import CartItemCounter from "./CartItemCounter";
+const Cart = () => {
+    // Usamos useState para gestionar el estado del carrito.
+    const [cart, setCart] = useState([]);
 
-const Cart = () =>{
-    // const { cart, setCart } = useContext(dataContext);
+    // Cargar los productos desde localStorage cuando el componente se monta.
+    useEffect(() => {
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        setCart(products);
+    }, []);
 
+    // Función para actualizar el carrito en localStorage y en el estado.
+    const updateCart = (updatedCart) => {
+        setCart(updatedCart);
+        localStorage.setItem('products', JSON.stringify(updatedCart));
+    };
 
-    function EliminarProducto(id) {
-        let products = JSON.parse(localStorage.getItem('products'))
+    // Función para eliminar un producto completamente.
+    const eliminarProducto = (id) => {
+        const updatedCart = cart.filter(product => product.id !== id);
+        updateCart(updatedCart);
+    };
 
-        if (products.some(p => p.id === id)) {   
-            products = products.filter(product => product.id !== id)
-            localStorage.setItem('products', JSON.stringify(products))
-            window.location.reload()
-        }
-    }
+    // Función para reducir la cantidad de un producto.
+    const restarUnaUnidad = (id) => {
+        const updatedCart = cart.map(product => {
+            if (product.id === id) {
+                // Reducimos la cantidad solo si es mayor a 1.
+                return { ...product, quantity: product.quantity - 1 };
+            }
+            return product;
+        }).filter(product => product.quantity > 0); // Eliminar productos con cantidad <= 0
 
-    function RestarUnaUnidad(id) {
-        let products = JSON.parse(localStorage.getItem('products'))
+        updateCart(updatedCart);
+    };
 
-        if (products.some(p => p.id === id)) {
-            products = products.forEach(p => {
-                if (p.id === id) {
-                    p.quantity--;
-                }
-                
-                if (p.quantity <= 0) {
-                    EliminarProducto(id) 
-                }
-            });
-            localStorage.setItem('products', JSON.stringify(products))
-            window.location.reload()
-        }
-    }
-
-
-    return JSON.parse(localStorage.getItem('products')).map((product) => {
-        return(
-            <div className="item-properties" key={product.id}>
-                <div className="cartContent" key={product.id}>
-                    <img src={product.img} alt="product-card" />
-                    <h3 className="name">{product.name}</h3>
-                    {/* <div className="cantidad"><CartItemCounter product={product} /></div> */}
-                    <h4 className="price">{product.price * product.quantity}$</h4>
-                    {/* <h3 className="cart-delete-button" onClick={() => eliminarProducto(product.id)}>❌</h3> */}
-                    <button onClick={() => EliminarProducto(product.id)}>Eliminar</button>
-                    <button onClick={() => RestarUnaUnidad(product.id)}>Sacar uno</button>
-                </div>
+    return cart.map((product) => (
+        <div className="item-properties" key={product.id}>
+            <div className="cartContent" key={product.id}>
+                <img src={product.img} alt="product-card" />
+                <h3 className="name">{product.name}</h3>
+                <h4 className="price">{product.price * product.quantity}$</h4>
+                <button onClick={() => eliminarProducto(product.id)}>Eliminar</button>
+                <button onClick={() => restarUnaUnidad(product.id)}>Sacar uno</button>
             </div>
-        )
-    })
+        </div>
+    ));
 };
 
 export default Cart;
