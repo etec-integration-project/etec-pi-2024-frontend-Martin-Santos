@@ -105,7 +105,7 @@ export default function EditProduct() {
 
                         <div>
                             <div>
-                                <button type="submit">Edit</button>
+                                <Link to="/productos"><button type="submit">Edit</button></Link>
                             </div>
                         </div>
 

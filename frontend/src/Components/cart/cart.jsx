@@ -16,7 +16,7 @@ const Cart = () =>{
         if (products.some(p => p.id === id)) {   
             products = products.filter(product => product.id !== id)
             localStorage.setItem('products', JSON.stringify(products))
-            window.location.reload()
+            // window.location.reload()
         }
     }
 
@@ -34,7 +34,7 @@ const Cart = () =>{
                 }
             });
             localStorage.setItem('products', JSON.stringify(products))
-            window.location.reload()
+            // window.location.reload()
         }
     }
 
