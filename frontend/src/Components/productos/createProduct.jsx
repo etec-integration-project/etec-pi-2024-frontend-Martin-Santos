@@ -91,7 +91,7 @@ export default function CreateProduct() {
                         <div>
                             
                             <div>
-                                <Link to="/productos"><button type="submit">Crear</button></Link>
+                                <button type="submit">Crear</button>
                             </div>
                         </div>
 
