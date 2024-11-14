@@ -3,6 +3,10 @@
 }
 .cartContent{
     border: 1px solid black;
+    align-items: center;
+    margin-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 .cartContent > img {
     height: 400px;
