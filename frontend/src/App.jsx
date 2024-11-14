@@ -11,7 +11,7 @@ import DataProvider from "./Components/Context/DataContext";
 import CreateProduct from "./Components/productos/createProduct";
 import EditProduct from "./Components/productos/editProduct";
 import Cart from "./Components/cart/cart";
-import cartTitle from "./Components/cart/cartTitle";
+import { CartTitle } from "./Components/cart/cartTitle";
 
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
 
             <Route path="/cart" element={<>
               <Header/>
-              <cartTitle/>
+              <CartTitle/>
               <Cart/>
               <Footer/>
             </>} />
