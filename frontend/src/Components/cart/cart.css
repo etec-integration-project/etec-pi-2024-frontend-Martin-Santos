@@ -1,6 +1,13 @@
 .item-properties{
     flex-wrap: wrap;
 }
+.cartContent{
+    border: 1px solid black;
+}
+.cartContent > img {
+    height: 400px;
+    width: 400px;
+}
 
 .cartContent{
     flex-direction: column;
