@@ -57,7 +57,7 @@ export default function EditProduct() {
             }
         } catch (error) {
             alert("Product Edited")
-            window.location.reload()
+            // window.location.reload()
             // alert("Unable to connect to the server!")
         }
     }
