@@ -55,6 +55,7 @@ export default function CreateProduct() {
             }
         } catch (error) {
             alert("Product Created")
+            window.location.reload()
             // alert("Unable to connect to the server!")
         }
     }
