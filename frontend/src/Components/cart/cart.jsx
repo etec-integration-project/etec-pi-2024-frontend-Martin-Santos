@@ -34,9 +34,17 @@ const Cart = () => {
 
 
     function RealizarCompra() {
-        const cart = localStorage.getItem('products')
+        let cart = JSON.parse(localStorage.getItem('products'))
+        let carrito = []
+        
+        cart.map(p => carrito.push({
+            id: p.id,
+            total: +(p.quantity) * +(p.price),
+            name: p.nameProduct
+        }))
+
         axios.post('/app/autenticacion/compraCarrito', {
-            cart
+            cart: carrito
         }, {
             withCredentials: true
         })
