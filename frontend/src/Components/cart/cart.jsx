@@ -31,17 +31,35 @@ const Cart = () => {
         updateCart(updatedCart);
     };
 
-    return cart.map((product) => (
-        <div className="item-properties" key={product.id}>
-            <div className="cartContent" key={product.id}>
-                <img src={product.img} alt="product-card" />
-                <h3 className="name">{product.name}</h3>
-                <h4 className="price">{product.price * product.quantity}$</h4>
-                <button onClick={() => eliminarProducto(product.id)}>Eliminar</button>
-                <button onClick={() => restarUnaUnidad(product.id)}>Sacar uno</button>
+
+    function RealizarCompra() {
+        const cart = localStorage.getItem('products')
+        axios.post('/app/autenticacion/compraCarrito', {
+            cart
+        }, {
+            withCredentials: true
+        })
+            .then(data => {
+                if (data.msg) {
+                    alert('Compra Realizada')
+                }
+            })
+    }
+
+    return (<>
+        {cart.map((product) => (
+            <div className="item-properties" key={product.id}>
+                <div className="cartContent" key={product.id}>
+                    <img src={product.img} alt="product-card" />
+                    <h3 className="name">{product.name}</h3>
+                    <h4 className="price">{product.price * product.quantity}$</h4>
+                    <button onClick={() => eliminarProducto(product.id)}>Eliminar</button>
+                    <button onClick={() => restarUnaUnidad(product.id)}>Sacar uno</button>
+                </div>
             </div>
-        </div>
-    ));
+        ))}
+        <button onClick={() => RealizarCompra()}>Realizar compra</button>
+    </>)
 };
 
 export default Cart;
