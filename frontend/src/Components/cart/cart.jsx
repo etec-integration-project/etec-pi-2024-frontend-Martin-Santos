@@ -44,7 +44,7 @@ const Cart = () => {
         }))
 
         axios.post('/app/autenticacion/compraCarrito', {
-            cart: carrito
+            cart: JSON.stringify(carrito)
         }, {
             withCredentials: true
         })
