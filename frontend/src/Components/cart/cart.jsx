@@ -48,10 +48,10 @@ const Cart = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({cart: carrito}),
+            body: JSON.stringify({cart: JSON.stringify(carrito)}),
             credentials: 'include'
         })
-            .then(res => res.jaon())
+            .then(res => res.json())
             .then(data => {
                 if (data.msg) {
                     alert('Compra realizada')
