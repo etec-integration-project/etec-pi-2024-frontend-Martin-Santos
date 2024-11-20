@@ -43,16 +43,31 @@ const Cart = () => {
             name: p.nameProduct
         }))
 
-        axios.post('/app/autenticacion/compraCarrito', {
-            cart: JSON.stringify(carrito)
-        }, {
-            withCredentials: true
+        fetch('/app/autenticacion/compraCarrito', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({cart: carrito}),
+            credentials: 'include'
         })
+            .then(res => res.jaon())
             .then(data => {
                 if (data.msg) {
-                    alert('Compra Realizada')
+                    alert('Compra realizada')
                 }
             })
+
+        // axios.post('/app/autenticacion/compraCarrito', {
+        //     cart: JSON.stringify(carrito)
+        // }, {
+        //     withCredentials: true
+        // })
+        //     .then(data => {
+        //         if (data.msg) {
+        //             alert('Compra Realizada')
+        //         }
+        //     })
     }
 
     return (<>
