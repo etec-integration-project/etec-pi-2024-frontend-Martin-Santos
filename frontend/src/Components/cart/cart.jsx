@@ -34,6 +34,10 @@ const Cart = () => {
 
 
     function RealizarCompra() {
+        if (!document.cookie.split("=")[0] == "santos-app"){
+            alert("Debes iniciar sesión para realizar una compra");
+            return;
+        }
         let cart = JSON.parse(localStorage.getItem('products'))
         let carrito = []
         
