@@ -54,6 +54,7 @@ const Cart = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.msg) {
+                    localStorage.setItem('products', JSON.stringify([]))
                     alert('Compra realizada')
                 }
             })
