@@ -1,13 +1,18 @@
+# Para levantar el proyecto, se debe poner en orden los siguientes comandos:
+# docker network create santos-app-network
+# docker compose up -d db 
+# docker compose up -d --build app
+# docker compose down app
+# docker compose up --build
+
 version: "3"
 services:
   react-app:
     stdin_open: true
     tty: true
-    build: .
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./src:/app/src
+    build: https://github.com/etec-integration-project/etec-pi-2024-frontend-Martin-Santos.git#main:frontend
+    # volumes:
+    #   - ./src:/app/src
     environment:
       - REACT_APP_NAME=martin
       - CHOKIDAR_USEPOLLING=true
@@ -19,28 +24,17 @@ services:
 
   db:
     image: mysql:8.0
-
     environment:
       - MYSQL_ROOT_PASSWORD=123456
-
       - MYSQL_DATABASE=DB
-
-    ports:
-      - "3307:3306" # Puerto expuesto en tu máquina
-
-    restart: always # Asegura que el contenedor se reinicie si falla
+    restart: always 
     networks:
       - santos-app-network
 
   app:
     build: https://github.com/etec-integration-project/etec-pi-2024-backend-Martin-Santos.git
-
     depends_on:
       - db
-
-    ports:
-      - "5000:5000"
-
     environment:
       - MYSQLDB_HOST=db
       - MYSQLDB_USER=root
@@ -49,12 +43,15 @@ services:
       - MYSQLDB_DOCKER_PORT=3306
       - JWT_SECRET=mysecretkey
       
-    restart: always # Asegura que el contenedor se reinicie si falla
+    restart: always 
     networks:
       - santos-app-network
 
   proxy:
-    image: nginx:1.27.1
+    # build: https://raw.githubusercontent.com/etec-integration-project/etec-pi-2024-frontend-Martin-Santos/refs/heads/main/frontend/proxy/Dockerfile
+    build:
+      context: https://github.com/etec-integration-project/etec-pi-2024-frontend-Martin-Santos.git#main:frontend/proxy
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     depends_on:
