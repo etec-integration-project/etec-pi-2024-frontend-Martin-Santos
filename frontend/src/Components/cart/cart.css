@@ -1,0 +1,30 @@
+.item-properties{
+    flex-wrap: wrap;
+}
+.cartContent{
+    border: 1px solid black;
+    align-items: center;
+    margin-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.cartContent > img {
+    height: 400px;
+    width: 600px;
+}
+
+.cartContent{
+    flex-direction: column;
+}
+.title-cart{
+    margin-top: 15vh;
+    font-family: 'Bruno Ace', cursive;
+    padding: 20px;
+    font-size: 15px;
+    border: none;
+    position: relative;
+    left: 0%;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #0074c7;
+    background-color: #4a91c4;
+}
